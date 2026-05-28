@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acupunctuur & Massagepraktijk Wan — Lisse</title>
+<meta name="description" content="Lichaam en geest in balans. Traditionele Chinese geneeskunde bij Acupunctuurpraktijk Wan in Lisse. Acupunctuur, tuina, cupping, moxa en kruiden." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        jade: {
+          50:  '#EEFAF5', 100: '#D5F2E5', 200: '#A8E5CD', 300: '#6FD1AC',
+          400: '#3DB888', 500: '#1E9C76', 600: '#118A71', 700: '#0E6F5B',
+          800: '#0B5749', 900: '#08382E',
+        },
+        sky: { 400: '#5A99CF', 500: '#337AB7', 600: '#2A6398', 700: '#21507B' },
+        ink: {
+          50: '#FAFAF9', 100: '#F2F0EC', 200: '#E5E2DB', 300: '#C9C5BB',
+          400: '#8A8479', 500: '#5C5851', 600: '#3D3A35', 700: '#262423',
+          800: '#1A1816', 900: '#0E0D0B',
+        },
+        sand: '#F7F4ED',
+        mist: '#EDF6F2',
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+        body:    ['"Inter"', 'sans-serif'],
+      },
+      letterSpacing: { tightest: '-0.03em' }
+    }
+  }
+}
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #F7F4ED; color: #262423; -webkit-font-smoothing: antialiased; }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeUp .5s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .nav-link { position: relative; padding-bottom: 6px; }
+  .nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: #1E9C76; transition: width .35s ease; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .img-placeholder {
+    background: radial-gradient(circle at 30% 40%, rgba(30,156,118,.10), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(51,122,183,.08), transparent 65%),
+                linear-gradient(135deg, #EDF6F2 0%, #F7F4ED 100%);
+    color: #5C5851; border: 1px solid rgba(38,36,35,.08);
+  }
+  .dropcap::first-letter {
+    font-family: 'Cormorant Garamond', serif; font-size: 5.5rem; line-height: .85;
+    float: left; padding: 6px 14px 0 0; color: #1E9C76; font-weight: 400; font-style: italic;
+  }
+  .cta-primary { background: #1E9C76; color: #fff; transition: all .3s ease; }
+  .cta-primary:hover { background: #118A71; transform: translateY(-1px); box-shadow: 0 10px 25px -10px rgba(17,138,113,.5); }
+  .cta-secondary { background: #337AB7; color: #fff; transition: all .3s ease; }
+  .cta-secondary:hover { background: #2A6398; transform: translateY(-1px); box-shadow: 0 10px 25px -10px rgba(51,122,183,.5); }
+  .hero-ambient {
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(51,122,183,.07), transparent 70%),
+                radial-gradient(ellipse 60% 50% at 0% 0%, rgba(30,156,118,.06), transparent 70%), #F7F4ED;
+  }
+  .treatment-circle { aspect-ratio: 1/1; border-radius: 9999px; overflow: hidden; transition: transform .5s ease; }
+  .treatment-circle:hover { transform: scale(1.04); }
+  .wa-pulse::before { content:''; position:absolute; inset:-6px; border-radius: 9999px; border: 2px solid #25D366; animation: pulse 2.2s ease-out infinite; opacity:0; }
+  @keyframes pulse { 0% { transform: scale(.85); opacity: .8;} 100% { transform: scale(1.4); opacity: 0;} }
+  .mobile-menu { transform: translateX(100%); transition: transform .4s cubic-bezier(.6,.05,.2,1); }
+  .mobile-menu.open { transform: translateX(0); }
+  .calli-line { height: 1px; background: linear-gradient(90deg, transparent, #6FD1AC, transparent); }
+  .price-card-accent { position: relative; }
+  .price-card-accent::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1E9C76, #337AB7); }
+  .frame { box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 25px 50px -25px rgba(38,36,35,.35); }
+  .marquee { display: flex; gap: 2.5rem; animation: scroll 50s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+</style>
+</head>
+<body class="bg-sand text-ink-700 overflow-x-hidden">
+
+<!-- TOP UTILITY -->
+<div class="bg-ink-700 text-white/85 text-[11px] tracking-[0.18em] uppercase">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-9 flex items-center justify-between">
+    <span class="hidden sm:inline">Direct online of bel — Floralisplein 71, Lisse</span>
+    <span class="sm:hidden">Lisse</span>
+    <div class="flex items-center gap-5">
+      <a href="tel:0685764208" class="hover:text-white transition-colors">06 8576 4208</a>
+      <span class="hidden sm:inline opacity-40">·</span>
+      <a href="mailto:info@praktijkwan.nl" class="hidden sm:inline hover:text-white transition-colors">info@praktijkwan.nl</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-sand/90 backdrop-blur-md border-b border-ink-200/60">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-24 flex items-center justify-between">
+    <a href="#" onclick="goTo('home');return false;" class="flex items-center gap-4 group">
+      <img src="https://www.praktijkwan.nl/gallery_gen/cef70de789a3efec8f5721f5d41243ed_368x326.26804123711.png"
+           alt="Acupunctuurpraktijk Wan"
+           class="h-14 w-auto"
+           onerror="this.outerHTML='<div class=&quot;w-14 h-14 rounded-full bg-jade-500 text-white font-display text-2xl flex items-center justify-center&quot;>太</div>'"/>
+      <span class="leading-tight">
+        <span class="block font-display text-[26px] tracking-tightest text-ink-700 font-medium">Acupunctuurpraktijk Wan</span>
+        <span class="block text-[10px] tracking-[0.22em] uppercase text-jade-600 mt-0.5">Praktijk voor Traditionele Chinese Geneeskunde</span>
+      </span>
+    </a>
+    <nav class="hidden xl:flex items-center gap-7 text-[13px] text-ink-600">
+      <a href="#" data-nav="home"           onclick="goTo('home');return false;"           class="nav-link active">Home</a>
+      <a href="#" data-nav="over-mij"       onclick="goTo('over-mij');return false;"       class="nav-link">Over mij</a>
+      <a href="#" data-nav="behandelingen"  onclick="goTo('behandelingen');return false;"  class="nav-link">Behandelingen</a>
+      <a href="#" data-nav="indicaties"     onclick="goTo('indicaties');return false;"     class="nav-link">Indicaties</a>
+      <a href="#" data-nav="tarieven"       onclick="goTo('tarieven');return false;"       class="nav-link">Tarieven & vergoedingen</a>
+      <a href="#" data-nav="introductie"    onclick="goTo('introductie');return false;"    class="nav-link">Introductie</a>
+      <a href="#" data-nav="contact"        onclick="goTo('contact');return false;"        class="nav-link">Afspraak en Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:0685764208" class="hidden md:inline-flex cta-secondary px-5 py-2.5 rounded-full text-[13px] font-medium tracking-wide">Bel direct</a>
+      <button onclick="toggleMenu()" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 -mr-2" aria-label="Open menu">
+        <span class="block w-6 h-px bg-ink-700"></span><span class="block w-6 h-px bg-ink-700"></span><span class="block w-4 h-px bg-ink-700 ml-auto"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-[85%] max-w-sm h-full bg-sand z-50 shadow-2xl xl:hidden">
+  <div class="p-6 border-b border-ink-200 flex items-center justify-between">
+    <span class="font-display text-xl">Menu</span>
+    <button onclick="toggleMenu()" class="text-2xl leading-none">×</button>
+  </div>
+  <nav class="p-6 flex flex-col gap-5 text-lg font-display">
+    <a href="#" onclick="goTo('home');toggleMenu();return false;">Home</a>
+    <a href="#" onclick="goTo('over-mij');toggleMenu();return false;">Over mij</a>
+    <a href="#" onclick="goTo('behandelingen');toggleMenu();return false;">Behandelingen</a>
+    <a href="#" onclick="goTo('indicaties');toggleMenu();return false;">Indicaties</a>
+    <a href="#" onclick="goTo('tarieven');toggleMenu();return false;">Tarieven & vergoedingen</a>
+    <a href="#" onclick="goTo('introductie');toggleMenu();return false;">Introductie</a>
+    <a href="#" onclick="goTo('contact');toggleMenu();return false;">Afspraak en Contact</a>
+    <a href="tel:0685764208" class="cta-primary mt-4 px-5 py-3 rounded-full text-center text-sm font-medium">Bel 06 8576 4208</a>
+  </nav>
+</div>
+<div id="menuOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-ink-900/40 z-40"></div>
+
+
+<!-- PAGE: HOME -->
+<section id="page-home" class="page active">
+
+  <section class="hero-ambient relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+        <div class="lg:col-span-5 order-2 lg:order-1 relative">
+          <div class="frame rounded-sm img-placeholder aspect-[4/5] flex items-end p-6 text-xs leading-relaxed">
+            [BEHOUD ORIGINELE FOTO: zen stenenstapel bij de zee — het hoofdbeeld van de huidige homepage, symboliseert balans tussen lichaam en geest]
+          </div>
+          <div class="frame rounded-sm img-placeholder aspect-square w-2/3 absolute -bottom-10 -right-6 hidden sm:flex items-end p-5 text-xs leading-relaxed">
+            [BEHOUD ORIGINELE FOTO: portretfoto Zhihong Wan in praktijkruimte]
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-px w-10 bg-jade-500"></span>
+            <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">Praktijk voor Traditionele Chinese Geneeskunde</span>
+          </div>
+          <h1 class="font-display text-[52px] leading-[0.95] sm:text-7xl lg:text-[96px] lg:leading-[0.92] tracking-tightest text-ink-700 font-light">
+            Lichaam en geest <em class="italic font-normal text-jade-500">in balans</em>.
+          </h1>
+          <p class="mt-8 max-w-xl font-display text-2xl lg:text-3xl italic text-ink-500 leading-[1.3] font-light">
+            "Niet alleen de klacht behandelen, maar de totale mens."
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#" onclick="goTo('contact');return false;" class="cta-primary px-7 py-4 rounded-full text-sm font-medium tracking-wide">Vraag consult en intake aan</a>
+            <a href="tel:0685764208" class="cta-secondary px-7 py-4 rounded-full text-sm font-medium tracking-wide">Bel 06 8576 4208</a>
+          </div>
+          <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs tracking-wider uppercase text-ink-400">
+            <span>NVA aangesloten</span><span class="text-jade-300">·</span>
+            <span>KAB lid</span><span class="text-jade-300">·</span>
+            <span>Vergoed door zorgverzekeraars</span><span class="text-jade-300">·</span>
+            <span>15+ jaar ervaring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-32 bg-sand">
+    <div class="max-w-4xl mx-auto px-5 lg:px-10 text-center">
+      <h2 class="font-display text-4xl lg:text-6xl font-light leading-[1.05] tracking-tightest text-jade-600">
+        Acupunctuur<span class="text-jade-500">:</span> iets voor jou?
+      </h2>
+      <div class="mt-14 space-y-10 text-ink-600">
+        <div>
+          <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium mb-3">Voelt u zich niet optimaal?</h3>
+          <p class="text-lg leading-relaxed max-w-2xl mx-auto">Acupunctuur verlicht pijn, verhelpt én voorkomt uiteenlopende klachten, geeft energie, verhoogt de weerstand, ontspant en geeft vrijwel geen bijwerkingen.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium mb-3">Voelt u zich in het algemeen wel goed?</h3>
+          <p class="text-lg leading-relaxed max-w-2xl mx-auto">Voorkomen is belangrijker dan genezen. Traditionele Chinese behandelingen kan heel goed helpen bij het behouden van uw gezondheid en bij het voorkomen van ziekten.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium mb-3">Ziet u op tegen een behandeling met acupunctuurnaalden?</h3>
+          <p class="text-lg leading-relaxed max-w-2xl mx-auto">Geen probleem. Ik kan u helpen uw symptomen te verhelpen met andere ontspannende methoden, zoals bijvoorbeeld met Tuina massage, Chinese kruiden, cupping of moxibustie.</p>
+        </div>
+        <p class="font-display text-2xl italic text-jade-500 pt-4">Ontdek wat we voor u kunnen doen!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-28 bg-ink-100/50">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-4xl lg:text-6xl font-light tracking-tightest text-jade-600">Behandelingen</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
+        <div class="text-center group cursor-pointer" onclick="goTo('behandelingen')">
+          <h3 class="font-display text-xl lg:text-2xl text-ink-700 font-medium mb-4">Acupunctuur</h3>
+          <div class="treatment-circle img-placeholder mx-auto flex items-end justify-center p-4 text-[10px] leading-tight w-full">[FOTO acupunctuurnaalden in arm]</div>
+        </div>
+        <div class="text-center group cursor-pointer" onclick="goTo('behandelingen')">
+          <h3 class="font-display text-xl lg:text-2xl text-ink-700 font-medium mb-4">Tuina</h3>
+          <div class="treatment-circle img-placeholder mx-auto flex items-end justify-center p-4 text-[10px] leading-tight w-full">[FOTO tuina massage handen op rug]</div>
+        </div>
+        <div class="text-center group cursor-pointer" onclick="goTo('behandelingen')">
+          <h3 class="font-display text-xl lg:text-2xl text-ink-700 font-medium mb-4">Kruiden</h3>
+          <div class="treatment-circle img-placeholder mx-auto flex items-end justify-center p-4 text-[10px] leading-tight w-full">[FOTO Chinese kruiden in schaaltjes]</div>
+        </div>
+        <div class="text-center group cursor-pointer" onclick="goTo('behandelingen')">
+          <h3 class="font-display text-xl lg:text-2xl text-ink-700 font-medium mb-4">Cupping</h3>
+          <div class="treatment-circle img-placeholder mx-auto flex items-end justify-center p-4 text-[10px] leading-tight w-full">[FOTO cupping glas op huid]</div>
+        </div>
+        <div class="text-center group cursor-pointer" onclick="goTo('behandelingen')">
+          <h3 class="font-display text-xl lg:text-2xl text-ink-700 font-medium mb-4">Moxa</h3>
+          <div class="treatment-circle img-placeholder mx-auto flex items-end justify-center p-4 text-[10px] leading-tight w-full">[FOTO brandende moxa-rol bij huid]</div>
+        </div>
+      </div>
+      <div class="text-center mt-16 max-w-2xl mx-auto">
+        <h3 class="font-display text-2xl text-ink-700 font-medium">Wat is voor jou de ideale behandeling?</h3>
+        <p class="mt-3 text-ink-500">Jij bent uniek, ook in wat je wilt en wat bij je past.<br/>Daarom zoeken we samen naar de behandeling die voor jou de ideale is.</p>
+        <button onclick="goTo('behandelingen')" class="cta-primary mt-7 px-8 py-3 rounded-full text-sm font-medium tracking-wide">Lees meer</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-2 gap-10">
+      <article class="bg-white p-10 lg:p-12 rounded-sm border border-ink-200/60">
+        <h2 class="font-display text-4xl text-jade-600 font-light">Indicaties</h2>
+        <p class="mt-5 text-ink-600 leading-relaxed">Wereldwijd wordt acupunctuur ingezet bij hoofdpijn, rugpijn, schouder-, arm- en nekpijn, buikpijn, menstruele klachten, reuma- en artrosepijn, fibromyalgia, en het harmoniseren van lichaam en geest.</p>
+        <button onclick="goTo('indicaties')" class="cta-primary mt-7 px-7 py-3 rounded-full text-sm">Lees meer →</button>
+      </article>
+      <article class="bg-white p-10 lg:p-12 rounded-sm border border-ink-200/60">
+        <h2 class="font-display text-4xl text-jade-600 font-light">Tarieven & vergoedingen</h2>
+        <p class="mt-5 text-ink-600 leading-relaxed">Heldere tarieven vanaf €15 voor het intake-consult. Acupunctuurbehandelingen vanaf €65. Vergoed door de meeste zorgverzekeraars via uw aanvullende verzekering.</p>
+        <button onclick="goTo('tarieven')" class="cta-primary mt-7 px-7 py-3 rounded-full text-sm">Lees meer →</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-mist py-24 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-4">
+          <div class="img-placeholder rounded-sm aspect-square frame flex items-end p-5 text-xs">[BEHOUD ORIGINELE FOTO: portretfoto Zhihong Wan met witte jas en bril]</div>
+        </div>
+        <div class="lg:col-span-8">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h2 class="font-display text-3xl lg:text-4xl text-jade-600 font-light">Uw Acupuncturist</h2>
+            <span class="font-display text-3xl lg:text-4xl text-jade-600 font-medium">Zhihong Wan</span>
+          </div>
+          <p class="mt-6 text-ink-600 leading-[1.8] text-lg max-w-2xl">
+            Ieder mens verschilt van de andere mens. Iedere klacht en ieder lichaam is anders.
+            Ik onderzoek en kijk naar de totale (energie) balans van het lichaam. Het is dan ook
+            mogelijk dat iemand met een bepaalde klacht een andere behandeling nodig heeft dan
+            iemand anders met precies dezelfde klacht.
+          </p>
+          <button onclick="goTo('over-mij')" class="cta-primary mt-7 px-7 py-3 rounded-full text-sm">Lees meer →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-28" style="background:linear-gradient(180deg,#D5E8F2 0%,#EDF6F2 100%)">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl lg:text-4xl text-ink-700 font-medium">Waarom kies je voor Acupunctuurpraktijk Wan?</h2>
+        <ul class="mt-8 space-y-4 text-lg text-ink-600">
+          <li class="flex items-start gap-4"><span class="block w-2 h-2 bg-jade-500 rounded-full mt-3 flex-shrink-0"></span><span>Professionele, erkende acupuncturist en Tuina massagetherapeut</span></li>
+          <li class="flex items-start gap-4"><span class="block w-2 h-2 bg-jade-500 rounded-full mt-3 flex-shrink-0"></span><span>Persoonlijke aandacht</span></li>
+          <li class="flex items-start gap-4"><span class="block w-2 h-2 bg-jade-500 rounded-full mt-3 flex-shrink-0"></span><span>De ideale combinatie behandeling van technieken</span></li>
+        </ul>
+      </div>
+      <div class="bg-white/60 backdrop-blur-sm p-10 rounded-sm">
+        <h2 class="font-display text-3xl lg:text-4xl text-ink-700 font-medium">Wat anderen over mij zeggen?</h2>
+        <div class="mt-8 space-y-7">
+          <figure>
+            <blockquote class="font-display italic text-lg text-ink-600 leading-relaxed">"Uitstekende ervaring in deze praktijk. Wat me vooral bevalt is dat ze op een professionele manier een combinatie van meerdere technieken zoals acupunctuur, moxa en tuina massage inzet bij de behandeling van mijn klachten. Ik ga hier zeker regelmatig terugkomen."</blockquote>
+            <figcaption class="mt-3 text-sm text-ink-500">— Tonny, Nieuw-Vennep</figcaption>
+          </figure>
+          <figure>
+            <blockquote class="font-display italic text-lg text-ink-600 leading-relaxed">"Heel goede ervaring in deze praktijk. Er wordt goed geluisterd en professioneel gewerkt. Prettige acupuncturiste. Op maat gesneden behandeling met goed resultaat."</blockquote>
+            <figcaption class="mt-3 text-sm text-ink-500">— Mirjam, Voorhout</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-jade-200 bg-jade-50 py-5 overflow-hidden">
+    <div class="marquee whitespace-nowrap font-display italic text-xl text-jade-700">
+      <span>Hillegom · Nieuw-Vennep · Sassenheim · Abbenes · Voorhout · Katwijk · Rijnsburg · Noordwijk · Noordwijkerhout · Oegstgeest · Warmond · Leiden · Hoofddorp · Heemstede · Haarlem ·&nbsp;</span>
+      <span>Hillegom · Nieuw-Vennep · Sassenheim · Abbenes · Voorhout · Katwijk · Rijnsburg · Noordwijk · Noordwijkerhout · Oegstgeest · Warmond · Leiden · Hoofddorp · Heemstede · Haarlem ·&nbsp;</span>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: OVER MIJ -->
+<section id="page-over-mij" class="page">
+  <section class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-32">
+        <div class="img-placeholder aspect-[3/4] rounded-sm frame flex items-end p-6 text-xs">[BEHOUD ORIGINELE FOTO: portretfoto Zhihong Wan]</div>
+      </div>
+      <div class="lg:col-span-7">
+        <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Over mij</span>
+        <h1 class="font-display text-5xl lg:text-6xl font-light leading-[1.0] mt-4 tracking-tightest text-ink-700">
+          Mijn naam is <em class="italic text-jade-500">Zhihong Wan</em>.
+        </h1>
+        <div class="mt-10 space-y-6 text-ink-600 text-lg leading-[1.8]">
+          <p class="dropcap">Mijn naam is Zhihong Wan. Ik ben geboren in China. Sinds 2009 woon ik in Nederland en heb aan de Hogeschool Rotterdam een hbo-opleiding gevolgd. Door een gelukkig toeval kwam ik in aanraking met acupunctuur. Daarna kwam de traditionele Chinese geneeskunde op mijn pad en werd ik aangetrokken tot de Chinese geneeskunde.</p>
+          <p>Na vier studiejaren heb ik de opleiding Acupunctuur succesvol afgerond aan de TCG (Traditionele Chinese Geneeskunde), de Shenzhou Universiteit in Amsterdam. Naast de acupunctuuropleiding heb ik ook de opleiding Medische Basiskennis met succes afgerond.</p>
+          <p>Jaren heb ik bij een grote bekende acupunctuurpraktijk in Den Haag gewerkt. Daar heb ik enorm veel ervaring met TCG-behandelingen opgebouwd. Omdat ik van nature een doorzetter ben, zal ik altijd op zoek gaan naar de therapie die het best bij u past.</p>
+          <p>Ik stel hoge eisen aan kwaliteit, ben zeer nauwkeurig en volg regelmatig bijscholingscursussen. Bovendien bezoek ik minimaal één keer per jaar China voor verdere studie, om mijn techniek te verbeteren en mijn specialistische kennis verder uit te breiden.</p>
+        </div>
+        <div class="mt-14 grid sm:grid-cols-2 gap-6">
+          <div class="border-l-2 border-jade-500 pl-5 py-2">
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Diploma</div>
+            <div class="font-display text-xl mt-1 text-ink-700">Acupunctuur</div>
+            <div class="text-sm text-ink-500">Shenzhou Universiteit, Amsterdam</div>
+          </div>
+          <div class="border-l-2 border-jade-500 pl-5 py-2">
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Diploma</div>
+            <div class="font-display text-xl mt-1 text-ink-700">Medische Basiskennis</div>
+            <div class="text-sm text-ink-500">Erkend door zorgverzekeraars</div>
+          </div>
+          <div class="border-l-2 border-jade-500 pl-5 py-2">
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Specialisatie</div>
+            <div class="font-display text-xl mt-1 text-ink-700">Oncologie (NVA erkend)</div>
+          </div>
+          <div class="border-l-2 border-jade-500 pl-5 py-2">
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Ervaring</div>
+            <div class="font-display text-xl mt-1 text-ink-700">15+ jaar TCG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: BEHANDELINGEN -->
+<section id="page-behandelingen" class="page">
+  <section class="bg-mist py-16 lg:py-24 border-b border-ink-200/40">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10">
+      <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Onze behandelingen</span>
+      <h1 class="font-display text-5xl lg:text-7xl font-light tracking-tightest leading-[1.0] mt-4 max-w-3xl text-ink-700">
+        TCG-disciplines voor uw <em class="italic text-jade-500">herstel</em>.
+      </h1>
+    </div>
+  </section>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto px-5 lg:px-10 space-y-20">
+      <article class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2"><div class="font-display text-7xl text-jade-300 italic font-light leading-none">01</div></div>
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl lg:text-5xl font-light text-jade-600">Acupunctuur</h2>
+          <p class="mt-5 text-ink-600 text-lg leading-relaxed">Wereldwijd wordt acupunctuur als een goede en efficiënte behandeling beschouwd voor verschillende pijnen en is sterk in het harmoniseren van lichaam en geest. Met dunne, steriele naalden stimuleer ik specifieke acupunctuurpunten om uw zelfgenezend vermogen te activeren.</p>
+        </div>
+        <div class="lg:col-span-3"><div class="img-placeholder treatment-circle flex items-end justify-center p-4 text-[10px]">[FOTO acupunctuur]</div></div>
+      </article>
+      <div class="calli-line"></div>
+      <article class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2"><div class="font-display text-7xl text-jade-300 italic font-light leading-none">02</div></div>
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl lg:text-5xl font-light text-jade-600">Tuina massage</h2>
+          <p class="mt-5 text-ink-600 text-lg leading-relaxed">Tuina is een krachtige Chinese massagetechniek die werkt op spieren, gewrichten én meridianen. Perfect als u opziet tegen naalden, of in combinatie met acupunctuur voor een diepgaander effect.</p>
+        </div>
+        <div class="lg:col-span-3"><div class="img-placeholder treatment-circle flex items-end justify-center p-4 text-[10px]">[FOTO tuina]</div></div>
+      </article>
+      <div class="calli-line"></div>
+      <article class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2"><div class="font-display text-7xl text-jade-300 italic font-light leading-none">03</div></div>
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl lg:text-5xl font-light text-jade-600">Chinese kruiden</h2>
+          <p class="mt-5 text-ink-600 text-lg leading-relaxed">Op basis van uw individuele diagnose stel ik een persoonlijk kruidenrecept samen. Chinese kruidengeneeskunde versterkt het effect van acupunctuur en ondersteunt het herstel tussen behandelingen.</p>
+        </div>
+        <div class="lg:col-span-3"><div class="img-placeholder treatment-circle flex items-end justify-center p-4 text-[10px]">[FOTO kruiden]</div></div>
+      </article>
+      <div class="calli-line"></div>
+      <article class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2"><div class="font-display text-7xl text-jade-300 italic font-light leading-none">04</div></div>
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl lg:text-5xl font-light text-jade-600">Cupping</h2>
+          <p class="mt-5 text-ink-600 text-lg leading-relaxed">Glazen cups creëren onderdruk op de huid en trekken stagnatie weg uit het weefsel. Cupping verbetert de bloedcirculatie, ontspant verkrampte spieren en kan helpen bij chronische pijn.</p>
+        </div>
+        <div class="lg:col-span-3"><div class="img-placeholder treatment-circle flex items-end justify-center p-4 text-[10px]">[FOTO cupping]</div></div>
+      </article>
+      <div class="calli-line"></div>
+      <article class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2"><div class="font-display text-7xl text-jade-300 italic font-light leading-none">05</div></div>
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl lg:text-5xl font-light text-jade-600">Moxa (moxibustie)</h2>
+          <p class="mt-5 text-ink-600 text-lg leading-relaxed">Bij moxibustie wordt gedroogd bijvoetkruid verbrand boven specifieke acupunctuurpunten. De warmte dringt diep door en is bijzonder effectief bij koude-gerelateerde klachten, vermoeidheid en zwakte.</p>
+        </div>
+        <div class="lg:col-span-3"><div class="img-placeholder treatment-circle flex items-end justify-center p-4 text-[10px]">[FOTO moxa]</div></div>
+      </article>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: INDICATIES -->
+<section id="page-indicaties" class="page">
+  <section class="py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-5 lg:px-10">
+      <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Klachten</span>
+      <h1 class="font-display text-5xl lg:text-7xl font-light tracking-tightest leading-[1.0] mt-4 text-ink-700">
+        Wanneer kan acupunctuur <em class="italic text-jade-500">helpen?</em>
+      </h1>
+      <div class="mt-12 space-y-8 text-ink-600 text-lg leading-[1.8]">
+        <p>Wereldwijd wordt acupunctuur als een goede en efficiënte behandeling beschouwd voor verschillende pijnen, zoals hoofdpijn, rugpijn, schouder- en arm pijn, pijn in de benen, nekpijn, buikpijn, menstruele en gynaecologische pijn, reumapijnen, artrosepijnen, fibromyalgia, aangezichtspijn, uitstralingspijnen, pijnen tussen de ribben, pijnen aan de wervels enz.</p>
+        <p>Naast pijn is acupunctuur sterk in het harmoniseren van lichaam en geest. Omdat acupunctuur lichaam en geest als één geheel ziet, is het mogelijk om zowel de lichamelijke als geestelijke klachten te verbeteren.</p>
+        <p>Na acupunctuur-behandelingen worden mensen levenslustiger, weerbaarder, meer solide, soepeler, alerter, helderder, rustiger, stressbestendiger en minder vatbaar voor gemoedswisselingen en depressiviteit.</p>
+      </div>
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Hoofdpijn & migraine</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Rug- & nekpijn</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Schouder & armpijn</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Buikpijn</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Menstruele klachten</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Reuma & artrose</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Fibromyalgia</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Stress & burn-out</span></div>
+        <div class="bg-mist p-5 rounded-sm border border-jade-100"><span class="font-display text-jade-600 text-xl">Slaapproblemen</span></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: TARIEVEN — ÉCHTE PRIJZEN -->
+<section id="page-tarieven" class="page">
+  <section class="py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-5 lg:px-10">
+      <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Tarieven & vergoedingen</span>
+      <h1 class="font-display text-5xl lg:text-7xl font-light tracking-tightest leading-[1.0] mt-4 text-ink-700">
+        Heldere tarieven. <em class="italic text-jade-500">Geen verrassingen.</em>
+      </h1>
+      <div class="mt-14 bg-white rounded-sm overflow-hidden border border-ink-200/60">
+        <div class="divide-y divide-ink-100">
+          <div class="price-card-accent grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9">
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">1e Consult en Intake</h3>
+              <p class="text-sm text-ink-500 mt-1">ca. 15-30 minuten incl. gesprek, onderzoek, pols/tong diagnose</p>
+            </div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€15</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center bg-jade-50/40">
+            <div class="col-span-8 lg:col-span-9">
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Acupunctuurbehandeling</h3>
+              <p class="text-sm text-ink-500 mt-1">ca. 45-60 minuten</p>
+              <span class="inline-block mt-2 text-[10px] tracking-[0.18em] uppercase bg-jade-500 text-white px-3 py-1 rounded-full">Meest gekozen</span>
+            </div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€65</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9">
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Uitgebreide acupunctuurbehandeling</h3>
+              <p class="text-sm text-ink-500 mt-1">Inclusief aanvullende technieken</p>
+            </div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€90</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9">
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Tuina massage</h3>
+              <p class="text-sm text-ink-500 mt-1">60 minuten</p>
+            </div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€80</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9"><h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Cuppingbehandeling</h3></div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€20</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9">
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Moxa therapie</h3>
+              <p class="text-sm text-ink-500 mt-1">60 minuten</p>
+            </div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€80</span></div>
+          </div>
+          <div class="grid grid-cols-12 gap-4 p-6 lg:p-8 items-center">
+            <div class="col-span-8 lg:col-span-9"><h3 class="font-display text-2xl lg:text-3xl text-ink-700 font-medium">Consult zonder behandeling</h3></div>
+            <div class="col-span-4 lg:col-span-3 text-right"><span class="font-display text-4xl lg:text-5xl text-jade-500 font-light">€45</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Betaling</span>
+          <h2 class="font-display text-3xl lg:text-4xl font-light mt-3 text-ink-700">Hoe werkt het?</h2>
+        </div>
+        <div class="lg:col-span-7 text-ink-600 leading-[1.8] space-y-4">
+          <p>Betaling geschiedt aan het einde van het consult per contant. Na afloop van de behandeling ontvangt u een factuur per e-mail.</p>
+          <p>De factuur kan worden ingediend bij uw zorgverzekeraar. De meeste zorgverzekeraars vergoeden acupunctuur geheel of gedeeltelijk via de aanvullende verzekering.</p>
+        </div>
+      </div>
+      <div class="mt-16 bg-jade-500 text-white p-10 lg:p-14 rounded-sm">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <h3 class="font-display text-3xl lg:text-4xl font-light">Wilt u eerst kennismaken?</h3>
+            <p class="mt-3 text-white/90 max-w-xl">Plan een eerste consult en intake van €15 om uw klacht te bespreken.</p>
+          </div>
+          <div class="lg:col-span-4 lg:text-right">
+            <a href="#" onclick="goTo('contact');return false;" class="inline-block bg-white text-jade-600 px-7 py-4 rounded-full text-sm font-medium hover:bg-jade-50 transition">Maak afspraak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: INTRODUCTIE -->
+<section id="page-introductie" class="page">
+  <section class="py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-5 lg:px-10">
+      <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Introductie</span>
+      <h1 class="font-display text-5xl lg:text-7xl font-light tracking-tightest leading-[1.0] mt-4 text-ink-700">
+        Over Traditionele <em class="italic text-jade-500">Chinese Geneeskunde</em>.
+      </h1>
+      <div class="mt-12 grid lg:grid-cols-3 gap-6">
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">01</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">Over Traditionele Chinese Geneeskunde</h3>
+          <p class="mt-3 text-sm text-ink-500">Een holistische geneeskunde met 5.000 jaar geschiedenis.</p>
+        </a>
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">02</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">Yin en Yang theorie</h3>
+          <p class="mt-3 text-sm text-ink-500">Het fundament van de Chinese diagnostiek.</p>
+        </a>
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">03</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">De vijf elementen</h3>
+          <p class="mt-3 text-sm text-ink-500">Hout, vuur, aarde, metaal en water in balans.</p>
+        </a>
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">04</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">Diagnose</h3>
+          <p class="mt-3 text-sm text-ink-500">Pols, tong en gesprek vormen samen het beeld.</p>
+        </a>
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">05</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">Voorbereiden voor een eerste bezoek</h3>
+          <p class="mt-3 text-sm text-ink-500">Wat u kunt verwachten en hoe u zich voorbereidt.</p>
+        </a>
+        <a href="#" class="bg-mist hover:bg-jade-50 p-8 rounded-sm border border-ink-200/40 transition">
+          <span class="text-[10px] tracking-[0.22em] uppercase text-jade-600">06</span>
+          <h3 class="font-display text-2xl text-ink-700 mt-2 font-medium">Voedingsadvies</h3>
+          <p class="mt-3 text-sm text-ink-500">In de Chinese geneeskunde is voeding medicijn.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!-- PAGE: CONTACT -->
+<section id="page-contact" class="page">
+  <section class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <span class="text-[11px] tracking-[0.28em] uppercase text-jade-600">— Contact</span>
+        <h1 class="font-display text-5xl lg:text-6xl font-light tracking-tightest leading-[1.0] mt-4 text-ink-700">
+          Maak een <em class="italic text-jade-500">afspraak</em>
+        </h1>
+        <p class="mt-6 text-ink-500 leading-relaxed">Heeft u eerst nog vragen? Of wilt u een afspraak maken? U kunt ons bereiken via WhatsApp of e-mail. Wij zullen u zo snel mogelijk te woord staan of uw vragen beantwoorden.</p>
+        <div class="mt-10 space-y-7">
+          <div>
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Bel / WhatsApp</div>
+            <a href="tel:0685764208" class="font-display text-3xl text-ink-700 hover:text-jade-500 transition block mt-1">06 8576 4208</a>
+          </div>
+          <div>
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">E-mail</div>
+            <a href="mailto:info@praktijkwan.nl" class="font-display text-3xl text-ink-700 hover:text-jade-500 transition block mt-1">info@praktijkwan.nl</a>
+          </div>
+          <div>
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Praktijkadres</div>
+            <address class="not-italic font-display text-2xl text-ink-700 mt-1 leading-snug">
+              Acupunctuurpraktijk Wan<br/>Floralisplein 71<br/>2161 HX Lisse
+            </address>
+          </div>
+          <div>
+            <div class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Openingstijden</div>
+            <div class="font-display text-xl text-ink-700 mt-1 leading-relaxed">
+              Maandag — Zaterdag &nbsp;<span class="text-jade-500">8:30 – 18:00</span><br/>
+              Zondag &nbsp;<span class="text-ink-400">Gesloten</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 bg-jade-50 p-6 rounded-sm border border-jade-200">
+          <h3 class="font-display text-xl text-ink-700 font-medium">Voorafgaand aan het eerste consult</h3>
+          <p class="mt-2 text-sm text-ink-600">Als u uw eerste afspraak hebt gemaakt, vragen wij u het intakeformulier te downloaden, in te vullen en weer terug te sturen voor uw eerste consult via info@praktijkwan.nl.</p>
+          <div class="mt-4 flex gap-2 flex-wrap">
+            <a href="mailto:info@praktijkwan.nl?subject=Intakeformulier%20Word" class="text-xs underline text-jade-600 hover:text-jade-700">Het intakeformulier (Word)</a>
+            <span class="text-jade-300">·</span>
+            <a href="mailto:info@praktijkwan.nl?subject=Intakeformulier%20PDF" class="text-xs underline text-jade-600 hover:text-jade-700">PDF-versie</a>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <form onsubmit="event.preventDefault(); alert('Bedankt! Bij livegang wordt dit gekoppeld aan uw e-mail.');" class="bg-white p-8 lg:p-12 rounded-sm border border-ink-200/60 space-y-6">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Naam</span>
+              <input type="text" required class="mt-2 w-full bg-transparent border-b border-ink-300 focus:border-jade-500 outline-none py-2 text-ink-700 transition"/>
+            </label>
+            <label class="block">
+              <span class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Telefoonnummer</span>
+              <input type="tel" class="mt-2 w-full bg-transparent border-b border-ink-300 focus:border-jade-500 outline-none py-2 text-ink-700 transition"/>
+            </label>
+          </div>
+          <label class="block">
+            <span class="text-[10px] tracking-[0.22em] uppercase text-ink-400">E-mail</span>
+            <input type="email" required class="mt-2 w-full bg-transparent border-b border-ink-300 focus:border-jade-500 outline-none py-2 text-ink-700 transition"/>
+          </label>
+          <label class="block">
+            <span class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Bericht</span>
+            <textarea rows="6" class="mt-2 w-full bg-transparent border-b border-ink-300 focus:border-jade-500 outline-none py-2 text-ink-700 transition resize-none"></textarea>
+          </label>
+          <label class="block">
+            <span class="text-[10px] tracking-[0.22em] uppercase text-ink-400">Bijlage</span>
+            <input type="file" class="mt-2 text-sm text-ink-500"/>
+          </label>
+          <button type="submit" class="cta-primary w-full sm:w-auto px-8 py-4 rounded-full text-sm font-medium tracking-wide">Invoeren</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!-- FOOTER (jade green — matches original) -->
+<footer class="bg-jade-600 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-3">
+        <div class="text-[10px] tracking-[0.22em] uppercase text-white/70 mb-4">Lid van</div>
+        <div class="font-display text-2xl">Nederlandse Vereniging voor Acupunctuur</div>
+        <div class="mt-6 text-[10px] tracking-[0.22em] uppercase text-white/70 mb-2">Aangesloten bij</div>
+        <div class="font-display text-2xl">KAB</div>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="text-[10px] tracking-[0.22em] uppercase text-white/70 mb-4">Praktijkadres</div>
+        <address class="not-italic leading-relaxed">Acupunctuurpraktijk Wan<br/>Floralisplein 71<br/>2161 HX<br/>Lisse</address>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="text-[10px] tracking-[0.22em] uppercase text-white/70 mb-4">Openingstijden</div>
+        <div class="leading-relaxed">Maandag — Zaterdag: 8:30 – 18:00<br/>Zondag: Gesloten</div>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="text-[10px] tracking-[0.22em] uppercase text-white/70 mb-4">Contact</div>
+        <a href="tel:0685764208" class="block hover:underline">06 8576 4208</a>
+        <a href="mailto:info@praktijkwan.nl" class="block hover:underline mt-1">info@praktijkwan.nl</a>
+        <div class="mt-4 text-sm text-white/80">Volg ons op Facebook</div>
+        <div class="mt-3 text-xs text-white/60">KVK: 76406547</div>
+      </div>
+    </div>
+    <div class="mt-12 pt-6 border-t border-white/20 text-xs text-white/70 text-center">
+      <div class="mb-3">Acupunctuur in Hillegom | Nieuw-Vennep | Sassenheim | Abbenes | Voorhout | Katwijk | Rijnsburg | Noordwijk | Noordwijkerhout | Oegstgeest | Warmond | Leiden | Hoofddorp | Heemstede | Haarlem</div>
+      <div class="flex justify-center gap-5 mt-3">
+        <a href="#" class="hover:text-white">Cookies</a><span>|</span><a href="#" class="hover:text-white">Disclaimer</a>
+      </div>
+      <div class="mt-4 text-white/50">© <span id="year"></span> Acupunctuur &amp; Massagepraktijk Wan</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- WHATSAPP WIDGET -->
+<a href="https://wa.me/31685764208?text=Hallo%20Praktijk%20Wan%2C%20ik%20wil%20graag%20een%20afspraak%20maken." target="_blank" rel="noopener" class="fixed bottom-4 right-4 z-50 group">
+  <div class="relative wa-pulse">
+    <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#25D366] hover:bg-[#1ebe57] shadow-lg flex items-center justify-center transition-all hover:scale-105">
+      <svg viewBox="0 0 32 32" class="w-7 h-7 lg:w-8 lg:h-8" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ffffff" d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 01-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 01-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.317.244-.658.244-1.005 0-.717-2.578-1.467-2.708-1.467m-2.395 7.917c-1.7 0-3.36-.502-4.78-1.4l-3.34.873.895-3.262c-.99-1.484-1.523-3.262-1.523-5.05 0-5.05 4.124-9.174 9.174-9.174 5.05 0 9.174 4.124 9.174 9.174 0 5.05-4.124 9.174-9.174 9.174M16.715 5.5c-6.025 0-10.916 4.89-10.916 10.916 0 1.92.5 3.79 1.45 5.435L5.78 27.218l5.503-1.436c1.578.882 3.357 1.348 5.432 1.348 6.025 0 10.916-4.89 10.916-10.916 0-6.025-4.89-10.916-10.916-10.916"/>
+      </svg>
+    </div>
+  </div>
+</a>
+
+<script>
+  function goTo(pageId){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + pageId);
+    if(target) target.classList.add('active');
+    document.querySelectorAll('[data-nav]').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('[data-nav="' + pageId + '"]').forEach(el => el.classList.add('active'));
+    window.scrollTo({top: 0, behavior: 'instant'});
+    setTimeout(triggerReveals, 50);
+  }
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('menuOverlay').classList.toggle('hidden');
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.15 });
+  function triggerReveals(){ document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el)); }
+  triggerReveals();
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
