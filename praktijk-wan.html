@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acupunctuur & Massagepraktijk Wan | Lisse & Leiden</title>
+<meta name="description" content="Acupunctuur, tuina massage, Chinese kruiden, moxa en cupping in Lisse & Leiden. Herstel uw balans met traditionele Chinese geneeskunde bij Praktijk Wan." />
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'serif'],
+          sans: ['"Nunito Sans"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Lettertypen -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; }
+  .font-serif-display { font-family: 'Cormorant Garamond', serif; }
+  @keyframes floatUp { from { opacity:0; transform:translateY(24px);} to {opacity:1; transform:translateY(0);} }
+  .reveal { animation: floatUp .8s ease both; }
+  @keyframes pulseRing {
+    0%   { box-shadow:0 0 0 0 rgba(37,211,102,.45); }
+    70%  { box-shadow:0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
+  }
+  .wa-pulse { animation: pulseRing 2.2s infinite; }
+  ::selection { background:#7a9a6e; color:#fff; }
+</style>
+</head>
+
+<body class="bg-[#f7f5ef] text-[#2f3a32] antialiased">
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-transparent py-5">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2">
+      <span class="grid place-items-center w-10 h-10 rounded-full bg-[#5d7a52] text-white">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+      </span>
+      <span class="font-serif-display text-xl md:text-2xl font-semibold tracking-wide text-[#3c4a38]">Praktijk Wan</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+      <a href="#home" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Home</a>
+      <a href="#behandelingen" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Behandelingen</a>
+      <a href="#over" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Over mij</a>
+      <a href="#reviews" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Ervaringen</a>
+      <a href="#werkgebied" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Werkgebied</a>
+      <a href="#contact" class="text-[#4a5647] hover:text-[#5d7a52] transition-colors">Contact</a>
+      <a href="tel:31685764208" class="inline-flex items-center gap-2 rounded-full bg-[#5d7a52] text-white px-5 py-2.5 hover:bg-[#4c6743] transition-colors shadow-sm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Afspraak maken
+      </a>
+    </nav>
+
+    <button class="lg:hidden text-[#3c4a38]" aria-label="Menu" onclick="document.getElementById('mobile-menu').classList.remove('hidden')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="w-7 h-7"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBIEL MENU ============ -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#3c4a38] text-[#f7f5ef] flex-col p-7" style="display:none;">
+  <div class="flex justify-between items-center mb-12">
+    <span class="font-serif-display text-2xl">Praktijk Wan</span>
+    <button aria-label="Sluiten" onclick="document.getElementById('mobile-menu').style.display='none'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="w-7 h-7"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-6 text-2xl font-serif-display" onclick="document.getElementById('mobile-menu').style.display='none'">
+    <a href="#home" class="hover:text-[#a9c39c]">Home</a>
+    <a href="#behandelingen" class="hover:text-[#a9c39c]">Behandelingen</a>
+    <a href="#over" class="hover:text-[#a9c39c]">Over mij</a>
+    <a href="#reviews" class="hover:text-[#a9c39c]">Ervaringen</a>
+    <a href="#werkgebied" class="hover:text-[#a9c39c]">Werkgebied</a>
+    <a href="#contact" class="hover:text-[#a9c39c]">Contact</a>
+  </nav>
+  <a href="tel:31685764208" class="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#a9c39c] text-[#3c4a38] px-6 py-4 font-bold">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    06 8576 4208
+  </a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#dfe7d3] blur-3xl opacity-60"></div>
+    <div class="absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-[#e8ddc8] blur-3xl opacity-60"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 rounded-full bg-white/70 border border-[#d8dccb] px-4 py-1.5 text-xs font-bold tracking-widest uppercase text-[#5d7a52]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        Traditionele Chinese Geneeskunde
+      </span>
+      <h1 class="font-serif-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] font-semibold mt-6 text-[#34402f]">
+        Herstel uw balans,<br />
+        <span class="italic text-[#5d7a52]">natuurlijk</span> en met aandacht
+      </h1>
+      <p class="mt-6 text-lg text-[#55604f] max-w-md leading-relaxed">
+        Acupunctuur verlicht pijn, verhelpt én voorkomt uiteenlopende klachten, geeft energie en ontspant — met vrijwel geen bijwerkingen. Ontdek wat we voor u kunnen doen.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-[#5d7a52] text-white px-7 py-4 font-bold hover:bg-[#4c6743] transition-colors shadow-lg shadow-[#5d7a52]/20">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Maak een afspraak
+        </a>
+        <a href="https://wa.me/31685764208?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20een%20behandeling%20bij%20Praktijk%20Wan." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-white text-[#3c4a38] border border-[#d8dccb] px-7 py-4 font-bold hover:border-[#5d7a52] transition-colors">
+          <svg viewBox="0 0 24 24" fill="#25D366" class="w-5 h-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.582 0 11.941-5.359 11.944-11.893a11.821 11.821 0 0 0-3.417-8.452"/></svg>
+          Stel uw vraag
+        </a>
+      </div>
+      <div class="mt-8 flex items-center gap-3 text-sm text-[#55604f]">
+        <div class="flex text-[#d4a017]">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <span>Gewaardeerd door cliënten in Lisse, Leiden &amp; omstreken</span>
+      </div>
+    </div>
+
+    <div class="reveal" style="animation-delay:.15s">
+      <div class="relative">
+        <div class="rounded-[2rem] overflow-hidden shadow-2xl shadow-[#3c4a38]/20 aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Rustgevende behandelruimte" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px] hidden md:block">
+          <div class="flex items-center gap-2 text-[#5d7a52]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="font-bold text-sm">Openingstijden</span>
+          </div>
+          <p class="text-xs text-[#55604f] mt-1.5 leading-relaxed">Ma t/m za: 8:30 – 18:00 · Zo: gesloten</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOORDELEN-BALK ============ -->
+<section class="bg-[#5d7a52] text-white">
+  <div class="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-3 gap-8 text-center">
+    <div>
+      <h3 class="font-serif-display text-2xl mb-2">Persoonlijke aanpak</h3>
+      <p class="text-sm text-[#e2ead9] leading-relaxed">Iedere klacht en ieder lichaam is anders — uw behandeling ook.</p>
+    </div>
+    <div>
+      <h3 class="font-serif-display text-2xl mb-2">Ervaren &amp; gediplomeerd</h3>
+      <p class="text-sm text-[#e2ead9] leading-relaxed">Opgeleid aan de Shenzhou Universiteit, jaren praktijkervaring.</p>
+    </div>
+    <div>
+      <h3 class="font-serif-display text-2xl mb-2">Naaldvrij mogelijk</h3>
+      <p class="text-sm text-[#e2ead9] leading-relaxed">Bang voor naalden? Tuina, kruiden, cupping of moxa bieden uitkomst.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHANDELINGEN ============ -->
+<section id="behandelingen" class="py-24 max-w-6xl mx-auto px-5">
+  <div class="text-center max-w-2xl mx-auto">
+    <span class="text-xs font-bold tracking-widest uppercase text-[#5d7a52]">Onze behandelingen</span>
+    <h2 class="font-serif-display text-4xl md:text-5xl font-semibold mt-3 text-[#34402f]">Zorg op maat, afgestemd op u</h2>
+    <p class="mt-4 text-[#55604f] leading-relaxed">Ik onderzoek en kijk naar de totale energiebalans van uw lichaam en ga altijd op zoek naar de therapie die het best bij u past.</p>
+  </div>
+
+  <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-[#ece9df]">
+      <div class="aspect-[4/3] overflow-hidden"><img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=800&q=80" alt="Acupunctuur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+      <div class="p-5"><h3 class="font-serif-display text-2xl text-[#34402f]">Acupunctuur</h3><p class="mt-2 text-sm text-[#55604f] leading-relaxed">Verlicht pijn, verhoogt de weerstand en activeert het zelfgenezend vermogen van het lichaam — met vrijwel geen bijwerkingen.</p></div>
+    </article>
+    <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-[#ece9df]">
+      <div class="aspect-[4/3] overflow-hidden"><img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80" alt="Tuina massage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+      <div class="p-5"><h3 class="font-serif-display text-2xl text-[#34402f]">Tuina Massage</h3><p class="mt-2 text-sm text-[#55604f] leading-relaxed">Traditionele Chinese massage die spanning losmaakt, de doorbloeding stimuleert en de energiebalans herstelt.</p></div>
+    </article>
+    <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-[#ece9df]">
+      <div class="aspect-[4/3] overflow-hidden"><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80" alt="Chinese kruiden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+      <div class="p-5"><h3 class="font-serif-display text-2xl text-[#34402f]">Chinese Kruiden</h3><p class="mt-2 text-sm text-[#55604f] leading-relaxed">Op maat samengestelde kruidenformules die de behandeling van binnenuit ondersteunen en versterken.</p></div>
+    </article>
+    <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-[#ece9df]">
+      <div class="aspect-[4/3] overflow-hidden"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Cupping en moxa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+      <div class="p-5"><h3 class="font-serif-display text-2xl text-[#34402f]">Cupping &amp; Moxa</h3><p class="mt-2 text-sm text-[#55604f] leading-relaxed">Cupping en moxibustie als ontspannende, naaldvrije methoden om klachten te verlichten en de energie te laten stromen.</p></div>
+    </article>
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-[#5d7a52] text-white px-7 py-4 font-bold hover:bg-[#4c6743] transition-colors shadow-lg shadow-[#5d7a52]/20">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Plan uw eerste consult
+    </a>
+  </div>
+</section>
+
+<!-- ============ OVER MIJ ============ -->
+<section id="over" class="bg-[#efece2] py-24">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="order-2 lg:order-1">
+      <span class="text-xs font-bold tracking-widest uppercase text-[#5d7a52]">Over mij</span>
+      <h2 class="font-serif-display text-4xl md:text-5xl font-semibold mt-3 text-[#34402f]">Zhihong Wan</h2>
+      <div class="mt-6 space-y-4 text-[#55604f] leading-relaxed">
+        <p>Door een gelukkig toeval kwam ik in aanraking met acupunctuur en raakte ik aangetrokken tot de traditionele Chinese geneeskunde. Na vier studiejaren rondde ik de opleiding Acupunctuur succesvol af aan de Shenzhou Universiteit in Amsterdam, aangevuld met de opleiding Medische Basiskennis.</p>
+        <p>Jarenlang werkte ik bij een grote, bekende acupunctuurpraktijk in Den Haag, waar ik enorm veel ervaring met TCG-behandelingen heb opgebouwd. Ik ben van nature een doorzetter en ga altijd op zoek naar de therapie die het best bij u past.</p>
+        <p>Ik stel hoge eisen aan kwaliteit, ben zeer nauwkeurig en volg regelmatig bijscholingscursussen — zodat u verzekerd bent van een zorgvuldige, deskundige behandeling.</p>
+      </div>
+      <div class="mt-7 flex flex-wrap gap-x-8 gap-y-2 text-sm font-semibold text-[#4a5647]">
+        <span>KVK 76406547</span>
+        <span>AGB-praktijk 90067179</span>
+        <span>AGB-zorgverlener 90108123</span>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <div class="rounded-[2rem] overflow-hidden shadow-2xl shadow-[#3c4a38]/20 aspect-[4/5] max-w-sm mx-auto">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Acupuncturist aan het werk" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="py-24 max-w-6xl mx-auto px-5">
+  <div class="text-center max-w-2xl mx-auto">
+    <span class="text-xs font-bold tracking-widest uppercase text-[#5d7a52]">Ervaringen</span>
+    <h2 class="font-serif-display text-4xl md:text-5xl font-semibold mt-3 text-[#34402f]">Wat cliënten zeggen</h2>
+  </div>
+  <div class="mt-14 grid md:grid-cols-3 gap-6">
+    <figure class="bg-white rounded-2xl p-7 shadow-sm border border-[#ece9df] flex flex-col">
+      <div class="flex text-[#d4a017] mb-4">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <blockquote class="text-[#454f43] leading-relaxed italic flex-1">“Heel goede ervaring in deze praktijk. Er wordt goed geluisterd en professioneel gewerkt. Op maat gesneden behandeling met goed resultaat.”</blockquote>
+      <figcaption class="mt-5 font-bold text-[#34402f]">Mirjam <span class="font-normal text-[#7d8678]">— Voorhout</span></figcaption>
+    </figure>
+    <figure class="bg-white rounded-2xl p-7 shadow-sm border border-[#ece9df] flex flex-col">
+      <div class="flex text-[#d4a017] mb-4">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <blockquote class="text-[#454f43] leading-relaxed italic flex-1">“Uitstekende ervaring. Prettige, kundige acupuncturiste die echt de tijd neemt en naar de hele balans van je lichaam kijkt.”</blockquote>
+      <figcaption class="mt-5 font-bold text-[#34402f]">Tevreden cliënt <span class="font-normal text-[#7d8678]">— Lisse</span></figcaption>
+    </figure>
+    <figure class="bg-white rounded-2xl p-7 shadow-sm border border-[#ece9df] flex flex-col">
+      <div class="flex text-[#d4a017] mb-4">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <blockquote class="text-[#454f43] leading-relaxed italic flex-1">“Na een paar behandelingen voelde ik me energieker en meer ontspannen. Een warme, rustige praktijk waar je je op je gemak voelt.”</blockquote>
+      <figcaption class="mt-5 font-bold text-[#34402f]">Tevreden cliënt <span class="font-normal text-[#7d8678]">— Leiden</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WERKGEBIED ============ -->
+<section id="werkgebied" class="bg-[#3c4a38] text-[#e7ecdf] py-20">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <span class="text-xs font-bold tracking-widest uppercase text-[#a9c39c]">Werkgebied</span>
+    <h2 class="font-serif-display text-4xl md:text-5xl font-semibold mt-3">Acupunctuur in uw regio</h2>
+    <p class="mt-4 text-[#c4cfb8] max-w-xl mx-auto">Onze praktijk in Lisse is gemakkelijk bereikbaar voor cliënten uit de wijde omgeving.</p>
+    <div id="werkgebied-tags" class="mt-9 flex flex-wrap justify-center gap-3"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-24 max-w-6xl mx-auto px-5">
+  <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+    <div class="bg-[#efece2] rounded-3xl p-9 md:p-12">
+      <h2 class="font-serif-display text-4xl md:text-5xl font-semibold text-[#34402f]">Klaar voor uw afspraak?</h2>
+      <p class="mt-4 text-[#55604f] leading-relaxed">Voorkomen is belangrijker dan genezen. Neem laagdrempelig contact op — bel of stuur een WhatsApp en ontdek wat we voor u kunnen doen.</p>
+
+      <div class="mt-8 space-y-5">
+        <a href="tel:31685764208" class="flex items-center gap-4 group">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-[#5d7a52] text-white shrink-0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span><span class="block text-xs uppercase tracking-widest text-[#7d8678] font-bold">Bel direct</span><span class="block font-bold text-lg text-[#34402f] group-hover:text-[#5d7a52]">06 8576 4208</span></span>
+        </a>
+        <a href="mailto:info@praktijkwan.nl" class="flex items-center gap-4 group">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-[#5d7a52] text-white shrink-0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          </span>
+          <span><span class="block text-xs uppercase tracking-widest text-[#7d8678] font-bold">E-mail</span><span class="block font-bold text-lg text-[#34402f] group-hover:text-[#5d7a52]">info@praktijkwan.nl</span></span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-[#5d7a52] text-white shrink-0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span><span class="block text-xs uppercase tracking-widest text-[#7d8678] font-bold">Adres</span><span class="block font-bold text-lg text-[#34402f]">Floralisplein 71, 2161 HX Lisse</span></span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/31685764208?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20een%20behandeling%20bij%20Praktijk%20Wan." target="_blank" rel="noreferrer" class="mt-9 inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-7 py-4 font-bold hover:bg-[#1faa52] transition-colors shadow-lg shadow-[#25D366]/30">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.582 0 11.941-5.359 11.944-11.893a11.821 11.821 0 0 0-3.417-8.452"/></svg>
+        Chat via WhatsApp
+      </a>
+      <p class="mt-6 text-xs text-[#7d8678] leading-relaxed">Tip: na het maken van uw eerste afspraak vragen wij u het intakeformulier in te vullen en terug te sturen vóór uw eerste consult.</p>
+    </div>
+
+    <div class="rounded-3xl overflow-hidden shadow-xl min-h-[360px]">
+      <iframe title="Locatie Praktijk Wan" class="w-full h-full min-h-[360px]" loading="lazy" src="https://www.google.com/maps?q=Floralisplein+71+Lisse&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[#2c352a] text-[#b9c4ad]">
+  <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-3 gap-10">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="grid place-items-center w-9 h-9 rounded-full bg-[#5d7a52] text-white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        </span>
+        <span class="font-serif-display text-xl text-[#e7ecdf]">Praktijk Wan</span>
+      </div>
+      <p class="text-sm leading-relaxed">Acupunctuur, tuina massage, Chinese kruiden, moxa en cupping in Lisse &amp; Leiden — voor uw balans en gezondheid.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-[#e7ecdf] mb-4 text-sm uppercase tracking-widest">Navigatie</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="#behandelingen" class="hover:text-white transition-colors">Behandelingen</a></li>
+        <li><a href="#over" class="hover:text-white transition-colors">Over mij</a></li>
+        <li><a href="#reviews" class="hover:text-white transition-colors">Ervaringen</a></li>
+        <li><a href="#werkgebied" class="hover:text-white transition-colors">Werkgebied</a></li>
+        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-[#e7ecdf] mb-4 text-sm uppercase tracking-widest">Contact</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Floralisplein 71, 2161 HX Lisse</li>
+        <li><a href="tel:31685764208" class="hover:text-white">06 8576 4208</a></li>
+        <li><a href="mailto:info@praktijkwan.nl" class="hover:text-white">info@praktijkwan.nl</a></li>
+        <li>Ma t/m za: 8:30 – 18:00 · Zo: gesloten</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[#3d4839] py-5 text-center text-xs text-[#8a957e]">
+    © <span id="jaar"></span> Acupunctuur &amp; Massagepraktijk Wan · KVK 76406547 · Privacy · Disclaimer
+  </div>
+</footer>
+
+<!-- ============ ZWEVENDE WHATSAPP-WIDGET ============ -->
+<a href="https://wa.me/31685764208?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20een%20behandeling%20bij%20Praktijk%20Wan." target="_blank" rel="noreferrer" aria-label="Contact via WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
+  <span class="hidden sm:block bg-white text-[#2c352a] text-sm font-semibold px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">Stel uw vraag</span>
+  <span class="wa-pulse grid place-items-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:bg-[#1faa52] transition-colors">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.582 0 11.941-5.359 11.944-11.893a11.821 11.821 0 0 0-3.417-8.452"/></svg>
+  </span>
+</a>
+
+<!-- ============ SCRIPT ============ -->
+<script>
+  // Header krimpt bij scrollen
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      header.classList.remove('bg-transparent', 'py-5');
+      header.classList.add('bg-[#f7f5ef]/95', 'backdrop-blur', 'shadow-sm', 'py-3');
+    } else {
+      header.classList.add('bg-transparent', 'py-5');
+      header.classList.remove('bg-[#f7f5ef]/95', 'backdrop-blur', 'shadow-sm', 'py-3');
+    }
+  });
+
+  // Werkgebied-tags genereren
+  const plaatsen = ["Lisse","Leiden","Hillegom","Sassenheim","Voorhout","Nieuw-Vennep","Abbenes","Katwijk","Rijnsburg","Noordwijk","Noordwijkerhout","Oegstgeest","Warmond","Hoofddorp","Heemstede","Haarlem"];
+  const tagsEl = document.getElementById('werkgebied-tags');
+  plaatsen.forEach(p => {
+    const s = document.createElement('span');
+    s.textContent = p;
+    s.className = "rounded-full border border-[#5e6e58] px-4 py-2 text-sm hover:bg-[#5d7a52] hover:border-[#5d7a52] transition-colors cursor-default";
+    tagsEl.appendChild(s);
+  });
+
+  // Jaartal in footer
+  document.getElementById('jaar').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
