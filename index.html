@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acupunctuurpraktijk Wan — Traditionele Chinese Geneeskunde · Lisse &amp; Heemstede</title>
+<title>Acupunctuurpraktijk Wan · Traditionele Chinese Geneeskunde · Lisse &amp; Heemstede</title>
 <meta name="description" content="Acupunctuur, Tuina massage, Chinese kruiden, cupping en moxa bij Acupunctuurpraktijk Wan in Lisse. Persoonlijke behandeling door erkend acupuncturist Zhihong Wan. Vergoed door de meeste zorgverzekeraars." />
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -92,6 +92,9 @@
 
   @keyframes breathe{ 0%,100%{ transform:scale(.82); opacity:.35;} 50%{ transform:scale(1.05); opacity:.7;} }
   .breathe{ animation:breathe 7s ease-in-out infinite; }
+
+  @keyframes scrollcue{ 0%,100%{ transform:translateY(0); opacity:.7; } 50%{ transform:translateY(5px); opacity:1; } }
+  .scrollcue{ animation:scrollcue 1.8s ease-in-out infinite; }
 
   /* mobile menu */
   #mobileMenu{ transition:opacity .5s ease, visibility .5s ease; }
@@ -185,7 +188,7 @@
 <section class="page active" data-page="home">
 
   <!-- HERO -->
-  <div class="relative min-h-[100svh] grain overflow-hidden flex items-end">
+  <div class="relative min-h-[86svh] md:min-h-[88svh] grain overflow-hidden flex items-end">
     <div class="absolute inset-0">
       <img src="https://www.praktijkwan.nl/gallery_gen/150a60c5e879fc0255886624fff687d0.jpg" alt="" class="w-full h-full object-cover" />
       <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(10,42,34,.62) 0%,rgba(10,42,34,.30) 38%,rgba(10,42,34,.72) 100%);"></div>
@@ -225,13 +228,19 @@
         <span>Vergoed door de meeste zorgverzekeraars</span>
       </div>
     </div>
+
+    <!-- scroll cue -->
+    <button id="scrollCue" aria-label="Scroll naar beneden" class="absolute z-20 bottom-5 right-5 md:left-1/2 md:right-auto md:-translate-x-1/2 flex flex-col items-center gap-1 text-paper/80 hover:text-paper transition-colors">
+      <span class="text-[10px] uppercase ls-eyebrow">Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="scrollcue"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </button>
   </div>
 
   <!-- INTRO -->
-  <div class="relative max-w-[1280px] mx-auto px-5 md:px-8 py-24 md:py-36">
+  <div id="introStart" class="relative max-w-[1280px] mx-auto px-5 md:px-8 py-24 md:py-36">
     <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
       <div class="md:col-span-5">
-        <p data-reveal class="text-xs uppercase ls-eyebrow text-jade mb-5">Acupunctuur — iets voor jou?</p>
+        <p data-reveal class="text-xs uppercase ls-eyebrow text-jade mb-5">Acupunctuur: iets voor jou?</p>
         <h2 data-reveal class="font-display font-light text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.02] ls-tight text-pine">
           Jij bent uniek. Je behandeling <span class="ital text-moxa">ook.</span>
         </h2>
@@ -243,7 +252,7 @@
         <div class="mt-12 grid sm:grid-cols-3 gap-8">
           <div data-reveal>
             <div class="font-display text-2xl text-pine mb-2">Voel je je niet optimaal?</div>
-            <p class="text-pine/70 leading-relaxed">Acupunctuur verlicht pijn, voorkomt uiteenlopende klachten, geeft energie en ontspant — vrijwel zonder bijwerkingen.</p>
+            <p class="text-pine/70 leading-relaxed">Acupunctuur verlicht pijn, voorkomt uiteenlopende klachten, geeft energie en ontspant, vrijwel zonder bijwerkingen.</p>
           </div>
           <div data-reveal>
             <div class="font-display text-2xl text-pine mb-2">Voel je je wél goed?</div>
@@ -378,14 +387,14 @@
           <blockquote class="font-display text-xl md:text-2xl font-light leading-relaxed text-pine">
             Uitstekende ervaring. Wat me vooral bevalt is dat ze op professionele wijze acupunctuur, moxa en tuina massage combineert bij mijn klachten. Ik kom hier zeker regelmatig terug.
           </blockquote>
-          <figcaption class="mt-6 text-sm font-semibold text-pine/70">— Tonny, Nieuw-Vennep</figcaption>
+          <figcaption class="mt-6 text-sm font-semibold text-pine/70">Tonny, Nieuw-Vennep</figcaption>
         </figure>
         <figure data-reveal class="bg-white rounded-3xl p-9 md:p-11 lift">
           <div class="text-moxa text-5xl font-display leading-none mb-4">“</div>
           <blockquote class="font-display text-xl md:text-2xl font-light leading-relaxed text-pine">
             Heel goede ervaring in deze praktijk. Er wordt goed geluisterd en professioneel gewerkt. Een op maat gesneden behandeling met goed resultaat.
           </blockquote>
-          <figcaption class="mt-6 text-sm font-semibold text-pine/70">— Mirjam, Voorhout</figcaption>
+          <figcaption class="mt-6 text-sm font-semibold text-pine/70">Mirjam, Voorhout</figcaption>
         </figure>
       </div>
     </div>
@@ -411,10 +420,10 @@
     <div class="md:col-span-7 max-w-2xl">
       <p data-reveal class="font-display text-2xl md:text-3xl font-light leading-snug text-pine">Mijn naam is Zhihong Wan. Ik ben geboren in China en woon sinds 2009 in Nederland.</p>
       <div class="mt-7 space-y-5 text-lg leading-relaxed text-pine/80">
-        <p data-reveal>Aan de Hogeschool Rotterdam volgde ik een hbo-opleiding. Door een gelukkig toeval kwam ik in aanraking met acupunctuur — en raakte ik aangetrokken tot de traditionele Chinese geneeskunde.</p>
+        <p data-reveal>Aan de Hogeschool Rotterdam volgde ik een hbo-opleiding. Door een gelukkig toeval kwam ik in aanraking met acupunctuur en raakte ik aangetrokken tot de traditionele Chinese geneeskunde.</p>
         <p data-reveal>Na vier studiejaren rondde ik de opleiding Acupunctuur succesvol af aan de TCG, de Shenzhou Universiteit in Amsterdam. Daarnaast voltooide ik de opleiding Medische Basiskennis.</p>
         <p data-reveal>Jaren werkte ik bij een grote, bekende acupunctuurpraktijk in Den Haag. Daar bouwde ik enorm veel ervaring op met behandelingen binnen de Chinese geneeskunde.</p>
-        <p data-reveal>Omdat ik van nature een doorzetter ben, zoek ik altijd naar de therapie die het best bij u past. Ik stel hoge eisen aan kwaliteit, ben zeer nauwkeurig en volg regelmatig bijscholing — zo blijf ik op de hoogte van de nieuwste technieken.</p>
+        <p data-reveal>Omdat ik van nature een doorzetter ben, zoek ik altijd naar de therapie die het best bij u past. Ik stel hoge eisen aan kwaliteit, ben zeer nauwkeurig en volg regelmatig bijscholing, zo blijf ik op de hoogte van de nieuwste technieken.</p>
         <p data-reveal>Bovendien bezoek ik minimaal één keer per jaar China voor verdere studie, om mijn techniek te verbeteren en mijn specialistische kennis uit te breiden. Zo bied ik mijn patiënten nog effectievere behandelingen.</p>
       </div>
 
@@ -425,7 +434,7 @@
         </div>
         <div class="bg-paper2 rounded-2xl p-5">
           <div class="font-display text-lg text-pine">Aangesloten</div>
-          <p class="text-sm text-pine/70 mt-1">NVA — Nederlandse Vereniging voor Acupunctuur · KAB-register</p>
+          <p class="text-sm text-pine/70 mt-1">NVA, Nederlandse Vereniging voor Acupunctuur · KAB-register</p>
         </div>
       </div>
 
@@ -500,7 +509,7 @@
           </div>
           <h2 class="font-display font-light text-3xl md:text-5xl text-pine ls-tight">Tuina massage</h2>
           <p class="mt-5 text-lg text-pine/80 leading-relaxed">Tuina is een van de therapieën binnen de Chinese geneeskunde, met een grote variëteit aan massages en effectieve manipulatietechnieken op het lichaamsoppervlak.</p>
-          <p class="mt-3 text-pine/70 leading-relaxed">Door de yin- en yang-aspecten van de lichaamsenergie in balans te brengen en de circulatie van Qi en Bloed te bevorderen, kunnen — deskundig toegepast — veel klachten verbeteren. Tuina werkt erg goed bij migraine, ischias en andere chronische pijn, en bij klachten rond spieren, gewrichten, stress en spijsvertering.</p>
+          <p class="mt-3 text-pine/70 leading-relaxed">Door de yin- en yang-aspecten van de lichaamsenergie in balans te brengen en de circulatie van Qi en Bloed te bevorderen, kunnen, mits deskundig toegepast, veel klachten verbeteren. Tuina werkt erg goed bij migraine, ischias en andere chronische pijn, en bij klachten rond spieren, gewrichten, stress en spijsvertering.</p>
           <div class="flex items-center gap-3 pt-5">
             <span class="text-sm font-semibold text-pine">Tuina massage · 60 min</span>
             <span class="text-moxa font-display text-2xl">€80</span>
@@ -528,7 +537,7 @@
           </div>
           <h2 class="font-display font-light text-3xl md:text-5xl text-pine ls-tight">Chinese kruiden</h2>
           <p class="mt-5 text-lg text-pine/80 leading-relaxed">Chinese kruiden zijn een essentieel onderdeel van de Chinese geneeskunde en brengen een verstoorde balans opnieuw in harmonie. Al duizenden jaren gebruikt men in China planten voor genezing.</p>
-          <p class="mt-3 text-pine/70 leading-relaxed">Net als elk acupunctuurpunt heeft ook elk kruid een specifieke werking op organen en weefsels. Afhankelijk van je klacht en constitutie stel ik speciaal voor jou een kruidenformule samen — die gedurende de behandeling kan meebewegen. Kruiden gaan goed samen met acupunctuur, cupping en tuina.</p>
+          <p class="mt-3 text-pine/70 leading-relaxed">Net als elk acupunctuurpunt heeft ook elk kruid een specifieke werking op organen en weefsels. Afhankelijk van je klacht en constitutie stel ik speciaal voor jou een kruidenformule samen, die gedurende de behandeling kan meebewegen. Kruiden gaan goed samen met acupunctuur, cupping en tuina.</p>
           <div class="text-sm font-semibold text-pine pt-5">Natuurlijk, op maat &amp; streng gecontroleerd op kwaliteit en veiligheid</div>
         </div>
       </div>
@@ -552,7 +561,7 @@
             <span class="text-xs uppercase ls-eyebrow text-jade">Behandeling</span>
           </div>
           <h2 class="font-display font-light text-3xl md:text-5xl text-pine ls-tight">Cupping</h2>
-          <p class="mt-5 text-lg text-pine/80 leading-relaxed">Bij cupping plaats ik een speciaal kopje van glas of aardewerk op de huid. Door het kortstondig te verwarmen ontstaat een vacuümkracht — een krachtige methode om spierknopen te ontspannen.</p>
+          <p class="mt-5 text-lg text-pine/80 leading-relaxed">Bij cupping plaats ik een speciaal kopje van glas of aardewerk op de huid. Door het kortstondig te verwarmen ontstaat een vacuümkracht, een krachtige methode om spierknopen te ontspannen.</p>
           <p class="mt-3 text-pine/70 leading-relaxed">Huid en bindweefsel rondom de pijnlijke spier worden stevig gestimuleerd. Het onderliggende gebied wordt extra goed doorbloed, waardoor de spier via reflexwerking tot ontspanning komt.</p>
           <div class="flex items-center gap-3 pt-5">
             <span class="text-sm font-semibold text-pine">Cuppingbehandeling</span>
@@ -581,7 +590,7 @@
           </div>
           <h2 class="font-display font-light text-3xl md:text-5xl text-pine ls-tight">Moxa</h2>
           <p class="mt-5 text-lg text-pine/80 leading-relaxed">Moxibustie is een begrip uit de klassieke acupunctuur. Moxa is een kruid met een verwarmende werking: een propje brandende moxa wordt boven de geplaatste naald gehouden.</p>
-          <p class="mt-3 text-pine/70 leading-relaxed">De intensieve warmte wordt via de naald naar het acupunt geleid, met als doel een tekort aan Qi op te heffen en de Qi-stroom te bevorderen. Vaak combineer ik acupunctuur en moxa in dezelfde sessie — ze versterken elkaars werking.</p>
+          <p class="mt-3 text-pine/70 leading-relaxed">De intensieve warmte wordt via de naald naar het acupunt geleid, met als doel een tekort aan Qi op te heffen en de Qi-stroom te bevorderen. Vaak combineer ik acupunctuur en moxa in dezelfde sessie, want ze versterken elkaars werking.</p>
           <div class="flex items-center gap-3 pt-5">
             <span class="text-sm font-semibold text-pine">Moxa therapie · 60 min</span>
             <span class="text-moxa font-display text-2xl">€80</span>
@@ -601,13 +610,13 @@
     <p data-reveal class="text-xs uppercase ls-eyebrow text-jade mb-5">Indicaties</p>
     <h1 data-reveal class="font-display font-light text-[clamp(2.6rem,8vw,6rem)] leading-[.95] ls-tight text-pine">Waarbij kan acupunctuur helpen?</h1>
     <p data-reveal class="mt-7 max-w-3xl text-lg md:text-xl font-light leading-relaxed text-pine/80">
-      Wereldwijd geldt acupunctuur als een efficiënte behandeling bij uiteenlopende pijn — hoofdpijn, rug-, nek-, schouder- en gewrichtspijn, reuma, fibromyalgie en meer. Daarnaast is acupunctuur sterk in het harmoniseren van lichaam én geest: mensen worden levenslustiger, weerbaarder, rustiger en stressbestendiger.
+      Wereldwijd geldt acupunctuur als een efficiënte behandeling bij uiteenlopende pijn, zoals hoofdpijn, rug-, nek-, schouder- en gewrichtspijn, reuma en fibromyalgie. Daarnaast is acupunctuur sterk in het harmoniseren van lichaam én geest: mensen worden levenslustiger, weerbaarder, rustiger en stressbestendiger.
     </p>
   </div>
 
   <div class="max-w-[1280px] mx-auto px-5 md:px-8 pb-24 md:pb-32">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="indicatieGrid"></div>
-    <p data-reveal class="mt-10 text-sm text-pine/55 max-w-3xl">Herken je je klacht hier niet meteen in? Neem gerust contact op — ik kijk altijd naar de totale energiebalans van je lichaam, en eenzelfde klacht vraagt bij de één een andere behandeling dan bij de ander.</p>
+    <p data-reveal class="mt-10 text-sm text-pine/55 max-w-3xl">Herken je je klacht hier niet meteen in? Neem gerust contact op, ik kijk altijd naar de totale energiebalans van je lichaam, en eenzelfde klacht vraagt bij de één een andere behandeling dan bij de ander.</p>
   </div>
   <div class="cta-band"></div>
 </section>
@@ -625,11 +634,11 @@
     <div data-reveal class="lg:col-span-7">
       <ul class="divide-y hair border-y hair">
         <li class="flex items-baseline justify-between gap-6 py-5">
-          <div><span class="font-display text-xl text-pine">1e consult &amp; intake</span><span class="block text-sm text-pine/55 mt-1">ca. 15–30 min, incl. gesprek, onderzoek, pols- en tongdiagnose</span></div>
+          <div><span class="font-display text-xl text-pine">1e consult &amp; intake</span><span class="block text-sm text-pine/55 mt-1">ca. 15 tot 30 min, incl. gesprek, onderzoek, pols- en tongdiagnose</span></div>
           <span class="font-display text-2xl text-moxa shrink-0">€15</span>
         </li>
         <li class="flex items-baseline justify-between gap-6 py-5">
-          <div><span class="font-display text-xl text-pine">Acupunctuurbehandeling</span><span class="block text-sm text-pine/55 mt-1">ca. 45–60 min</span></div>
+          <div><span class="font-display text-xl text-pine">Acupunctuurbehandeling</span><span class="block text-sm text-pine/55 mt-1">ca. 45 tot 60 min</span></div>
           <span class="font-display text-2xl text-moxa shrink-0">€65</span>
         </li>
         <li class="flex items-baseline justify-between gap-6 py-5">
@@ -681,7 +690,7 @@
     <p data-reveal class="text-xs uppercase ls-eyebrow text-jade mb-5">Introductie</p>
     <h1 data-reveal class="font-display font-light text-[clamp(2.6rem,8vw,6rem)] leading-[.95] ls-tight text-pine">Traditionele<br/>Chinese Geneeskunde</h1>
     <p data-reveal class="mt-7 max-w-3xl text-lg md:text-xl font-light leading-relaxed text-pine/80">
-      De Chinese geneeskunde ziet lichaam en geest als één geheel. Niet de losse klacht staat centraal, maar het herstellen van het natuurlijke evenwicht — zodat je lichaam zijn zelfgenezend vermogen weer kan benutten.
+      De Chinese geneeskunde ziet lichaam en geest als één geheel. Niet de losse klacht staat centraal, maar het herstellen van het natuurlijke evenwicht, zodat je lichaam zijn zelfgenezend vermogen weer kan benutten.
     </p>
   </div>
 
@@ -689,7 +698,7 @@
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">道</span>
       <h3 class="font-display text-2xl text-pine mt-4">Over de Chinese geneeskunde</h3>
-      <p class="text-pine/70 mt-3 leading-relaxed">Een eeuwenoude geneeskunde die de mens als geheel benadert en de oorzaak achter de klacht zoekt — niet alleen het symptoom.</p>
+      <p class="text-pine/70 mt-3 leading-relaxed">Een eeuwenoude geneeskunde die de mens als geheel benadert en de oorzaak achter de klacht zoekt, niet alleen het symptoom.</p>
     </div>
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">阴阳</span>
@@ -699,7 +708,7 @@
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">五行</span>
       <h3 class="font-display text-2xl text-pine mt-4">De vijf elementen</h3>
-      <p class="text-pine/70 mt-3 leading-relaxed">Hout, vuur, aarde, metaal en water beschrijven hoe organen en emoties elkaar beïnvloeden — en sturen de keuze van de behandeling.</p>
+      <p class="text-pine/70 mt-3 leading-relaxed">Hout, vuur, aarde, metaal en water beschrijven hoe organen en emoties elkaar beïnvloeden, en bepalen mee welke behandeling past.</p>
     </div>
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">诊断</span>
@@ -709,7 +718,7 @@
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">准备</span>
       <h3 class="font-display text-2xl text-pine mt-4">Je eerste bezoek</h3>
-      <p class="text-pine/70 mt-3 leading-relaxed">Vul vooraf het intakeformulier in, eet iets lichts en draag makkelijke kleding. Voor de intake reserveren we 15–30 minuten.</p>
+      <p class="text-pine/70 mt-3 leading-relaxed">Vul vooraf het intakeformulier in, eet iets lichts en draag makkelijke kleding. Voor de intake reserveren we 15 tot 30 minuten.</p>
     </div>
     <div data-reveal class="bg-paper2 rounded-3xl p-8 lift">
       <span class="hanzi text-4xl text-jade">食疗</span>
@@ -726,7 +735,7 @@
   <div class="max-w-[1280px] mx-auto px-5 md:px-8 pb-14">
     <p data-reveal class="text-xs uppercase ls-eyebrow text-jade mb-5">Afspraak &amp; contact</p>
     <h1 data-reveal class="font-display font-light text-[clamp(2.6rem,8vw,6rem)] leading-[.95] ls-tight text-pine">Plan je consult</h1>
-    <p data-reveal class="mt-7 max-w-2xl text-lg font-light leading-relaxed text-pine/80">Vragen of meteen een afspraak maken? Bel of WhatsApp, of vul het formulier in — ik beantwoord je bericht zo snel mogelijk.</p>
+    <p data-reveal class="mt-7 max-w-2xl text-lg font-light leading-relaxed text-pine/80">Vragen of meteen een afspraak maken? Bel of WhatsApp, of vul het formulier in, ik beantwoord je bericht zo snel mogelijk.</p>
   </div>
 
   <div class="max-w-[1280px] mx-auto px-5 md:px-8 pb-24 md:pb-32 grid lg:grid-cols-12 gap-10 md:gap-14">
@@ -791,13 +800,13 @@
         <div class="mt-6 pt-6 border-t border-paper/15">
           <div class="text-xs uppercase ls-eyebrow text-moxasoft mb-3">Openingstijden</div>
           <ul class="text-sm text-paper/85 space-y-1.5">
-            <li class="flex justify-between"><span>Maandag</span><span>8:30 – 14:30</span></li>
-            <li class="flex justify-between"><span>Dinsdag</span><span>8:30 – 14:30</span></li>
-            <li class="flex justify-between"><span>Woensdag <span class="opacity-60">(Heemstede)</span></span><span>8:30 – 12:00</span></li>
-            <li class="flex justify-between"><span>Donderdag</span><span>8:30 – 14:30</span></li>
-            <li class="flex justify-between"><span>Vrijdag</span><span>8:30 – 12:00</span></li>
+            <li class="flex justify-between"><span>Maandag</span><span>8:30 tot 14:30</span></li>
+            <li class="flex justify-between"><span>Dinsdag</span><span>8:30 tot 14:30</span></li>
+            <li class="flex justify-between"><span>Woensdag <span class="opacity-60">(Heemstede)</span></span><span>8:30 tot 12:00</span></li>
+            <li class="flex justify-between"><span>Donderdag</span><span>8:30 tot 14:30</span></li>
+            <li class="flex justify-between"><span>Vrijdag</span><span>8:30 tot 12:00</span></li>
             <li class="flex justify-between opacity-55"><span>Zaterdag</span><span>Gesloten</span></li>
-            <li class="flex justify-between"><span>Zondag</span><span>9:00 – 13:00</span></li>
+            <li class="flex justify-between"><span>Zondag</span><span>9:00 tot 13:00</span></li>
           </ul>
         </div>
       </div>
@@ -1018,7 +1027,7 @@ document.getElementById('contactForm').addEventListener('submit', e=>{
   const tel = f.tel.value.trim();
   const beh = f.behandeling.value;
   const ber = f.bericht.value.trim();
-  const subject = `Afspraakaanvraag — ${beh}`;
+  const subject = `Afspraakaanvraag: ${beh}`;
   const body =
 `Naam: ${naam}
 E-mail: ${email}
@@ -1029,6 +1038,17 @@ Bericht:
 ${ber}`;
   window.location.href = `mailto:info@praktijkwan.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+/* ---------- scroll cue ---------- */
+const scrollCue = document.getElementById('scrollCue');
+if(scrollCue){
+  scrollCue.addEventListener('click', ()=>{
+    const el = document.getElementById('introStart');
+    if(!el) return;
+    if(lenis){ lenis.scrollTo(el, {offset:-70}); }
+    else { el.scrollIntoView({behavior:'smooth'}); }
+  });
+}
 
 /* ---------- init ---------- */
 const initial = (location.hash||'#home').replace('#','');
